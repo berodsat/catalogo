@@ -5,25 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Catálogo de anuncios del Almanaque de «El Comercio», 1892-1931</title>
 <meta name="description" content="Base de datos de acceso abierto con los anuncios publicados en las cuarenta ediciones del Almanaque de «El Comercio» entre 1892 y 1931.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --tema-fuente: Georgia, 'Times New Roman', serif;
+    --tema-fuente: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
     --tema-texto:  #1f1f1f;
-    --tema-fondo:  #ffffff;
+    --tema-fondo:  #F6F4ED;
     --wp--preset--color--primary: #5451CA;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--tema-fondo);color:var(--tema-texto);
        font-family:var(--tema-fuente);font-size:17px;line-height:1.6;
-       -webkit-font-smoothing:antialiased}
+       -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
   .pagina{max-width:1720px;margin:0 auto;padding:26px 22px 70px}
   .volver{font-size:14px;font-weight:700;margin:0 0 26px}
   .volver a{color:#5451CA;text-decoration:none}
   .volver a:hover{text-decoration:underline}
-  h1{font-size:1.9em;line-height:1.2;font-weight:400;margin:0 0 .5em}
-  p.entradilla{max-width:70ch;margin:0 0 32px}
-  .pie{border-top:1px solid #ddd;margin-top:48px;padding-top:22px;font-size:15px;color:#555}
-  .pie strong{display:block;color:#1f1f1f}
+  h1{font-size:2em;line-height:1.15;font-weight:700;letter-spacing:-.015em;margin:0 0 .45em}
+  p.entradilla{max-width:70ch;margin:0 0 14px;color:#3a3a3a}
+  p.entradilla:last-of-type{margin-bottom:34px}
+  .pie{border-top:1px solid #d8d3c4;margin-top:48px;padding-top:22px;font-size:15px;color:#5c5c5c}
+  .pie strong{display:block;color:#1f1f1f;font-weight:500}
   .pie a{color:#5451CA}
 </style>
 </head>
@@ -34,12 +38,19 @@
 
 <h1>Catálogo de anuncios en el Almanaque de «El Comercio», 1892-1931</h1>
 
-<p class="entradilla">Base de datos de acceso abierto con los anuncios publicados en las cuarenta
-ediciones del Almanaque. Filtre por año, actividad, localización o tipo de anunciante: las cifras
-y los gráficos se recalculan sobre la selección, y al hacer clic en cualquier barra se filtra por
-esa categoría. Esta versión reúne 3.672 anuncios categorizados de 1.420 anunciantes. La consulta
-se realiza en línea; el catálogo no se distribuye como archivo descargable.</p>
+<p class="entradilla">Base de datos de acceso abierto con los anuncios publicados en las
+cuarenta ediciones del Almanaque, esta primera versión reúne 3.672 anuncios categorizados de
+1.420 anunciantes.</p>
 
+<p class="entradilla">Los valores del catálogo se presentan en mayúsculas sostenidas. En los
+campos transcritos, esa forma reproduce la convención tipográfica del Almanaque, que imprimía la
+mayoría de las razones sociales en versales. En los campos normalizados e inferidos, señala que el
+valor pertenece al vocabulario controlado. Se conservan las tildes y se distingue la Ñ de la N.</p>
+
+<p class="entradilla">La consulta se realiza en línea; el catálogo no se distribuye como archivo
+descargable. Filtre por año, actividad, localización o tipo de anunciante para que las cifras y
+los gráficos se recalculen sobre la selección. Al hacer clic en cualquier barra de las gráficas,
+se filtra por la categoría elegida.</p>
 <style>
 /* ============================================================
    CATÁLOGO DE ANUNCIOS · estilos
@@ -114,7 +125,7 @@ se realiza en línea; el catálogo no se distribuye como archivo descargable.</p
 #cat-almanaque .yr{display:flex;gap:8px}
 #cat-almanaque button.clear{text-transform:uppercase;letter-spacing:.1em;font-size:.65em;
   font-family:inherit;background:currentColor;border:0;padding:9px 12px;width:100%;cursor:pointer}
-#cat-almanaque button.clear span{color:var(--cat-fondo,#fff);mix-blend-mode:difference}
+#cat-almanaque button.clear span{color:#F6F4ED}
 #cat-almanaque button.clear:hover{background:var(--cat-acento)}
 #cat-almanaque .chips{margin-top:9px;display:flex;flex-wrap:wrap;gap:5px}
 #cat-almanaque .chip{font-size:.62em;text-transform:uppercase;letter-spacing:.08em;
@@ -134,7 +145,7 @@ se realiza en línea; el catálogo no se distribuye como archivo descargable.</p
 #cat-almanaque .bar:hover{fill:color-mix(in srgb, var(--cat-grafico) 65%, currentColor)}
 #cat-almanaque .bar.on{fill:color-mix(in srgb, var(--cat-grafico) 55%, currentColor)}
 #cat-almanaque .bar.off{fill:color-mix(in srgb, var(--cat-grafico) 28%, transparent)}
-#cat-almanaque .blabel{font-size:11px;fill:var(--cat-tenue)}
+#cat-almanaque .blabel{font-size:10.5px;fill:var(--cat-tenue)}
 #cat-almanaque .bval{font-size:11px;fill:var(--cat-tenue);font-variant-numeric:tabular-nums}
 #cat-almanaque .axis{stroke:var(--cat-grafico);stroke-width:1}
 
@@ -174,7 +185,7 @@ se realiza en línea; el catálogo no se distribuye como archivo descargable.</p
 <div id="cat-almanaque">
 
 <div class="kpis">
-  <div class="kpi"><b id="k1">—</b><span>Anuncios encontrados</span></div>
+  <div class="kpi"><b id="k1">—</b><span>Anuncios en la selección</span></div>
   <div class="kpi"><b id="k2">—</b><span>Anunciantes distintos</span></div>
   <div class="kpi"><b id="k3">—</b><span>Años con registro</span></div>
   <div class="kpi"><b id="k4">—</b><span>Actividades económicas</span></div>
@@ -183,16 +194,16 @@ se realiza en línea; el catálogo no se distribuye como archivo descargable.</p
 <div class="cols">
   <aside class="rail">
     <h3>Acotar la búsqueda</h3>
-    <div class="fg"><label for="q">Razón social</label><input type="search" id="q" placeholder="p. ej. Boggiano"></div>
+    <div class="fg"><label for="q">Razón social (normalizado)</label><input type="search" id="q" placeholder="p. ej. Boggiano"></div>
     <div class="fg"><label>Años</label><div class="yr"><select id="y0" aria-label="Año inicial"></select><select id="y1" aria-label="Año final"></select></div></div>
-    <div class="fg"><label for="f-aeco">Actividad económica</label><select id="f-aeco"></select></div>
-    <div class="fg"><label for="f-prov">Provincia</label><select id="f-prov"></select></div>
-    <div class="fg"><label for="f-region">Región</label><select id="f-region"></select></div>
-    <div class="fg"><label for="f-tipoanunciante">Tipo de anunciante</label><select id="f-tipoanunciante"></select></div>
-    <div class="fg"><label for="f-tipoanuncio">Tipo de anuncio</label><select id="f-tipoanuncio"></select></div>
-    <div class="fg"><label for="f-familia">Familia empresaria</label><select id="f-familia"></select></div>
-    <div class="fg"><label for="f-sexo">Sexo (persona natural)</label><select id="f-sexo"></select></div>
-    <button class="clear" id="clear"><span>Quitar todos los filtros</span></button>
+    <div class="fg"><label for="f-aeco">Actividad económica (normalizado)</label><select id="f-aeco"></select></div>
+    <div class="fg"><label for="f-prov">Provincia (transcrito)</label><select id="f-prov"></select></div>
+    <div class="fg"><label for="f-region">Región (inferido)</label><select id="f-region"></select></div>
+    <div class="fg"><label for="f-tipoanunciante">Tipo de anunciante (inferido)</label><select id="f-tipoanunciante"></select></div>
+    <div class="fg"><label for="f-tipoanuncio">Tipo de anuncio (inferido)</label><select id="f-tipoanuncio"></select></div>
+    <div class="fg"><label for="f-familia">Familia empresaria (inferido)</label><select id="f-familia"></select></div>
+    <div class="fg"><label for="f-sexo">Sexo persona natural (inferido)</label><select id="f-sexo"></select></div>
+    <button class="clear" id="clear"><span>Limpiar filtros</span></button>
     <div class="chips" id="chips"></div>
   </aside>
 
@@ -204,12 +215,12 @@ se realiza en línea; el catálogo no se distribuye como archivo descargable.</p
     </section>
 
     <div class="g2">
-      <section class="mod"><h3>Actividad económica</h3><svg id="c-aeco" role="img" aria-label="Por actividad económica"></svg><div class="slug">Doce más frecuentes · clic para filtrar</div></section>
-      <section class="mod"><h3>Provincia de la sede</h3><svg id="c-prov" role="img" aria-label="Por provincia"></svg><div class="slug">Doce más frecuentes · clic para filtrar</div></section>
-      <section class="mod"><h3>Tipo de anunciante</h3><svg id="c-tipoanunciante" role="img" aria-label="Por tipo de anunciante"></svg><div class="slug">Persona jurídica, natural o marca · clic para filtrar</div></section>
-      <section class="mod"><h3>Tipo de anuncio</h3><svg id="c-tipoanuncio" role="img" aria-label="Por tipo de anuncio"></svg><div class="slug">Producto o servicio, institucional o mixto · clic para filtrar</div></section>
-      <section class="mod"><h3>Región de la sede</h3><svg id="c-region" role="img" aria-label="Por región"></svg><div class="slug">Costa, sierra o extranjero · clic para filtrar</div></section>
-      <section class="mod"><h3>Familia empresaria</h3><svg id="c-familia" role="img" aria-label="Por vínculo familiar"></svg><div class="slug">Excluye los registros sin vínculo declarado · clic para filtrar</div></section>
+      <section class="mod"><h3>Actividad económica (normalizado)</h3><svg id="c-aeco" role="img" aria-label="Por actividad económica"></svg><div class="slug">Doce más frecuentes · clic para filtrar</div></section>
+      <section class="mod"><h3>Provincia (transcrito)</h3><svg id="c-prov" role="img" aria-label="Por provincia"></svg><div class="slug">Doce más frecuentes · clic para filtrar</div></section>
+      <section class="mod"><h3>Tipo de anunciante (inferido)</h3><svg id="c-tipoanunciante" role="img" aria-label="Por tipo de anunciante"></svg><div class="slug">Persona jurídica, natural o marca · clic para filtrar</div></section>
+      <section class="mod"><h3>Tipo de anuncio (inferido)</h3><svg id="c-tipoanuncio" role="img" aria-label="Por tipo de anuncio"></svg><div class="slug">Producto o servicio, institucional o mixto · clic para filtrar</div></section>
+      <section class="mod"><h3>Región (inferido)</h3><svg id="c-region" role="img" aria-label="Por región"></svg><div class="slug">Costa, sierra o extranjero · clic para filtrar</div></section>
+      <section class="mod"><h3>Familia empresaria (inferido)</h3><svg id="c-familia" role="img" aria-label="Por vínculo familiar"></svg><div class="slug">Excluye los registros sin vínculo declarado · clic para filtrar</div></section>
     </div>
 
     <section class="mod">
@@ -217,8 +228,8 @@ se realiza en línea; el catálogo no se distribuye como archivo descargable.</p
       <div style="overflow-x:auto">
         <table>
           <thead><tr>
-            <th>Año</th><th class="hide-s">ID</th><th>Razón social</th>
-            <th class="hide-s">Actividad económica</th><th>Provincia</th><th class="hide-s">Tipo de anuncio</th>
+            <th>Año</th><th class="hide-s">ID</th><th>Razón social (normalizado)</th>
+            <th class="hide-s">Actividad económica (normalizado)</th><th>Provincia (transcrito)</th><th class="hide-s">Tipo de anuncio (inferido)</th>
           </tr></thead>
           <tbody id="tb"></tbody>
         </table>
@@ -260,7 +271,8 @@ var F={q:'',y0:YMIN,y1:YMAX};
 FIELDS.forEach(function(f){F[f.k]=-1;});
 var limit=100;
 
-function tc(s){return s.toLowerCase().replace(/(^|[\s\-\/\(])([a-záéíóúñ])/g,function(m,a,b){return a+b.toUpperCase();});}
+/* Los valores se muestran tal como están en el catálogo: MAYÚSCULAS SOSTENIDAS. */
+function tc(s){return String(s);}
 
 function fill(el,key){
   var n={};ROWS.forEach(function(r){var v=r[C[key]];if(v>=0)n[v]=(n[v]||0)+1;});
@@ -303,19 +315,19 @@ function hbars(id,key,sel,topN,drop){
   var ks=Object.keys(n).map(Number).sort(function(a,b){return n[b]-n[a];}).slice(0,topN);
   if(F[key]>=0&&ks.indexOf(F[key])<0)ks.unshift(F[key]);
   var max=Math.max.apply(null,ks.map(function(k){return n[k]||0;}).concat([1]));
-  var LH=21,LW=150,h=ks.length*LH+4;
+  var LH=21,LW=282,h=ks.length*LH+4;
   svg.setAttribute('height',Math.max(h,30));
-  svg.setAttribute('viewBox','0 0 420 '+Math.max(h,30));
+  svg.setAttribute('viewBox','0 0 580 '+Math.max(h,30));
   svg.setAttribute('preserveAspectRatio','xMinYMin meet');
   svg.innerHTML=ks.map(function(k,i){
-    var c=n[k]||0,w=Math.max(1,(420-LW-40)*c/max),y=i*LH+3,on=F[key]===k;
-    var l=tc(DICT[key][k]);if(l.length>26)l=l.slice(0,25)+'…';
+    var c=n[k]||0,w=Math.max(1,(580-LW-46)*c/max),y=i*LH+3,on=F[key]===k;
+    var l=tc(DICT[key][k]);if(l.length>48)l=l.slice(0,47)+'…';
     return '<g style="cursor:pointer" data-k="'+key+'" data-v="'+k+'">'
       +'<title>'+DICT[key][k]+' — '+c+' anuncios</title>'
       +'<text class="blabel" x="0" y="'+(y+11)+'"'+(on?' fill="var(--cat-grafico)" font-weight="600"':'')+'>'+l+'</text>'
       +'<rect class="bar'+(on?' on':'')+'" x="'+LW+'" y="'+y+'" width="'+w+'" height="13"></rect>'
       +'<text class="bval" x="'+(LW+w+5)+'" y="'+(y+11)+'">'+c+'</text>'
-      +'<rect x="0" y="'+y+'" width="420" height="'+LH+'" fill="transparent"></rect></g>';
+      +'<rect x="0" y="'+y+'" width="520" height="'+LH+'" fill="transparent"></rect></g>';
   }).join('')||'<text class="blabel" y="14">Sin registros con este dato en la selección.</text>';
 }
 
