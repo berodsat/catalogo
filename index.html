@@ -105,7 +105,23 @@ se filtra por la categoría elegida.</p>
 
 /* --- disposición --- */
 #cat-almanaque .cols{display:grid;grid-template-columns:266px 1fr;gap:38px;align-items:start}
-#cat-almanaque .rail{position:sticky;top:12px}
+#cat-almanaque .rail{
+  position:sticky;top:12px;
+  /* la columna de filtros se desplaza sola cuando no cabe en la pantalla */
+  max-height:calc(100vh - 24px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  padding-right:12px;
+  scrollbar-width:thin;
+  scrollbar-color:var(--cat-grafico) transparent;
+}
+#cat-almanaque .rail::-webkit-scrollbar{width:8px}
+#cat-almanaque .rail::-webkit-scrollbar-track{background:transparent}
+#cat-almanaque .rail::-webkit-scrollbar-thumb{
+  background:var(--cat-grafico);border-radius:4px;
+  border:2px solid transparent;background-clip:content-box}
+#cat-almanaque .rail::-webkit-scrollbar-thumb:hover{
+  background:var(--cat-grafico);background-clip:padding-box}
 #cat-almanaque h3{font-family:inherit;font-weight:700;text-transform:uppercase;
   letter-spacing:.12em;font-size:.72em;margin:0 0 9px;color:inherit}
 
@@ -170,7 +186,8 @@ se filtra por la categoría elegida.</p>
 
 @media(max-width:880px){
   #cat-almanaque .cols{grid-template-columns:1fr;gap:18px}
-  #cat-almanaque .rail{position:static;border-bottom:2px solid var(--cat-filete);padding-bottom:12px}
+  #cat-almanaque .rail{position:static;border-bottom:2px solid var(--cat-filete);
+    padding-bottom:12px;max-height:none;overflow:visible;padding-right:0}
   #cat-almanaque .g2{grid-template-columns:1fr}
   #cat-almanaque .kpis{grid-template-columns:1fr 1fr}
   #cat-almanaque .kpi{border-left:1px solid var(--cat-filete)}
@@ -218,7 +235,7 @@ se filtra por la categoría elegida.</p>
       <section class="mod"><h3>Provincia (transcrito)</h3><svg id="c-prov" role="img" aria-label="Por provincia"></svg><div class="slug">Doce más frecuentes · clic para filtrar</div></section>
       <section class="mod"><h3>Tipo de anunciante (inferido)</h3><svg id="c-tipoanunciante" role="img" aria-label="Por tipo de anunciante"></svg><div class="slug">Persona jurídica, natural o marca · clic para filtrar</div></section>
       <section class="mod"><h3>Tipo de anuncio (inferido)</h3><svg id="c-tipoanuncio" role="img" aria-label="Por tipo de anuncio"></svg><div class="slug">Producto o servicio, institucional o mixto · clic para filtrar</div></section>
-      <section class="mod"><h3>Región (inferido)</h3><svg id="c-region" role="img" aria-label="Por región"></svg><div class="slug">Costa, sierra o extranjero · clic para filtrar</div></section>
+      <section class="mod"><h3>Región (inferido)</h3><svg id="c-region" role="img" aria-label="Por región"></svg><div class="slug">Costa o sierra; no aplica en los anunciantes con sede en el extranjero · clic para filtrar</div></section>
       <section class="mod"><h3>Familia empresaria (inferido)</h3><svg id="c-familia" role="img" aria-label="Por vínculo familiar"></svg><div class="slug">Excluye los registros sin vínculo declarado · clic para filtrar</div></section>
     </div>
 
