@@ -188,12 +188,6 @@ se filtra por la categoría elegida.</p>
 /* --- Zonas con desplazamiento propio -------------------------------
    Los gráficos y la tabla de registros se mueven cada uno por su
    cuenta, sin arrastrar el resto de la página.                      */
-#cat-almanaque .g2{
-  max-height:calc(100vh - 60px);
-  overflow-y:auto;
-  overscroll-behavior:contain;
-  padding-right:12px;
-}
 #cat-almanaque .tabla-scroll{
   max-height:60vh;
   overflow:auto;
@@ -206,16 +200,12 @@ se filtra por la categoría elegida.</p>
 }
 /* barras de desplazamiento, en el color de los gráficos */
 #cat-almanaque .rail,
-#cat-almanaque .g2,
 #cat-almanaque .tabla-scroll{
   scrollbar-width:thin;
   scrollbar-color:var(--cat-grafico) transparent;
 }
-#cat-almanaque .g2::-webkit-scrollbar,
 #cat-almanaque .tabla-scroll::-webkit-scrollbar{width:8px;height:8px}
-#cat-almanaque .g2::-webkit-scrollbar-track,
 #cat-almanaque .tabla-scroll::-webkit-scrollbar-track{background:transparent}
-#cat-almanaque .g2::-webkit-scrollbar-thumb,
 #cat-almanaque .tabla-scroll::-webkit-scrollbar-thumb{
   background:var(--cat-grafico);border-radius:4px;
   border:2px solid transparent;background-clip:content-box}
@@ -225,7 +215,6 @@ se filtra por la categoría elegida.</p>
   #cat-almanaque .rail{position:static;border-bottom:2px solid var(--cat-filete);
     padding-bottom:12px;max-height:none;overflow:visible;padding-right:0}
   #cat-almanaque .g2{grid-template-columns:1fr}
-  #cat-almanaque .g2{max-height:none;overflow:visible;padding-right:0}
   #cat-almanaque .tabla-scroll{max-height:none}
   #cat-almanaque .kpis{grid-template-columns:1fr 1fr}
   #cat-almanaque .kpi{border-left:1px solid var(--cat-filete)}
